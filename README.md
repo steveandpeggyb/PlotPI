@@ -16,3 +16,7 @@ So for 3.1415<br><br>
   the four (4) will be defined as x=1.2 y=-1.8 from previous location<br>
   the one (1) will be defined as x=1.2 y=-1.8 from previous location<br>
   the five (5) will be defined as x=0 y=-3 from previous location<br>
+<br>
+# Known bugs
+<br>
+Execution time is being calculated but has a problem when the execution time is excessive.  My computer calculated one million digits with no issues but when I attempted to plot to 10 million, the time reported was wrong.  <NOTE: it did plot correctly, the time was just wrong.>
