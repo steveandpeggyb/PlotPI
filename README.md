@@ -1,4 +1,7 @@
 # PlotPI
+<br>
+Begin by changing the variable "DigitCount =  10000" to the number of digits you want to plot.<br>
+<br>
 Plot PI() to nth number of digits.  The direction of the plot will be like a 10 digit clock with zero (0) straight up.
 <br>
 <br>Plot direction will be defined by the dictionary xDict and yDict
