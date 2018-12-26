@@ -4,6 +4,8 @@ import numpy as np
 import decimal, time
 import pyqtgraph as pg
 import pyqtgraph.exporters
+from datetime import datetime
+
 
 def pi_gauss_legendre():
     D = decimal.Decimal
@@ -21,6 +23,8 @@ def pi_gauss_legendre():
             if pi == piold:  # equal within given precision
                 break
     return +pi
+date_object = datetime.now()
+start_clock = date_object.strftime('%H:%M:%S')
 
 starttime=time.process_time()
 DigitCount =  1000000
@@ -35,7 +39,11 @@ if duration == 0:
 decimalPlaces = len(str(pi))-2
 CharPerSec = decimalPlaces/(duration)
 
+date_object = datetime.now()
+stop_clock = date_object.strftime('%H:%M:%S')
+
 print('Decimal Places Calculated: {0:,d}'.format(decimalPlaces))
+print('Start Time = '+ start_clock, 'End Time = ' + stop_clock)
 print('After {0:5.4f} seconds of computation, {1:,d} decimal places were computed resulting is a {2:5.3f} decimals/second.'.format(duration, decimalPlaces, CharPerSec))
 
 # define the data
@@ -74,3 +82,4 @@ if __name__ == '__main__':
     import sys
     if sys.flags.interactive != 1 or not hasattr(pg.QtCore, 'PYQT_VERSION'):
         pg.QtGui.QApplication.exec_()
+
