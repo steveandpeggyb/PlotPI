@@ -19,4 +19,4 @@ So for 3.1415<br><br>
 <br>
 <strong># Known bugs</strong>
 <br>
-Execution time is being calculated but has a problem when the execution time is excessive.  My computer calculated one million digits with no issues but when I attempted to plot to 10 million, the time reported was wrong.  <NOTE: it did plot correctly, the time was just wrong.>
+The calculated time is now accurate and output's both the times to calculate PI and plotting of digits.
