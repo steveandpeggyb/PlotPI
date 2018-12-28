@@ -70,7 +70,7 @@ for index in range(2, len(sPi)):       #   Build the plot series
         x.append(float(xDict[int(sPi[index])]) + x[index-3])
         y.append(float(yDict[int(sPi[index])]) + y[index-3])
 EndTime = datetime.now()
-print(EndTime, '\t\tPI() Plotted Completed')
+print(EndTime, '\t\tPI() Plot Completed')
 print(EndTime - StartTime, '\t\tTotal Plot Time')
 
 pg.setConfigOption('background', 'w')
