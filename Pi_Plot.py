@@ -8,6 +8,8 @@ from datetime import datetime
 
 
 def pi_gauss_legendre():
+    StartTime = datetime.now()
+    print(StartTime, '\t\tBegin Calculating PI().')
     D = decimal.Decimal
     with decimal.localcontext() as ctx:
         ctx.prec += 2                
@@ -22,29 +24,30 @@ def pi_gauss_legendre():
             pi    = (a + b) * (a + b) / (4 * t)
             if pi == piold:  # equal within given precision
                 break
+    EndTime = datetime.now()
+    print(EndTime, '\t\tPI() is calculated.')
+    print(EndTime-StartTime, '\t\tTotal Calc Time')
     return +pi
+
 date_object = datetime.now()
 start_clock = date_object.strftime('%H:%M:%S')
 
 starttime=time.process_time()
-DigitCount =  1000000
-
+DigitCount =  100000
+print('Decimal Places Calculated: \t\t{0:,d}'.format(DigitCount))
+print('------------------------------------------------------------------------')
 decimal.getcontext().prec = DigitCount + 1   #8751
 pi = pi_gauss_legendre()
 stoptime=time.process_time()
 # print(pi)
 duration = stoptime - starttime
 if duration == 0:
-    duration = .0001    # if calculation take less than one second, this prevents a divide by zero error.
+    duration = .0001    # if calculation take less than one second, this line will prevent a divide by zero error.
 decimalPlaces = len(str(pi))-2
 CharPerSec = decimalPlaces/(duration)
 
 date_object = datetime.now()
 stop_clock = date_object.strftime('%H:%M:%S')
-
-print('Decimal Places Calculated: {0:,d}'.format(decimalPlaces))
-print('Start Time = '+ start_clock, 'End Time = ' + stop_clock)
-print('After {0:5.4f} seconds of computation, {1:,d} decimal places were computed resulting is a {2:5.3f} decimals/second.'.format(duration, decimalPlaces, CharPerSec))
 
 # define the data
 theTitle = "Plot " + format(DigitCount, ",d") + " digits of PI()"
@@ -56,6 +59,9 @@ y = []
 x = []
 sPi = str(pi)
 
+# create plot
+StartTime = datetime.now()
+print(StartTime, '\t\tBegin Plotting PI()')
 for index in range(2, len(sPi)):       #   Build the plot series
     if index == 2:
         x.append(0)
@@ -63,23 +69,18 @@ for index in range(2, len(sPi)):       #   Build the plot series
     else:
         x.append(float(xDict[int(sPi[index])]) + x[index-3])
         y.append(float(yDict[int(sPi[index])]) + y[index-3])
+EndTime = datetime.now()
+print(EndTime, '\t\tPI() Plotted Completed')
+print(EndTime - StartTime, '\t\tTotal Plot Time')
 
-# create plot
-    
 pg.setConfigOption('background', 'w')
 plt = pg.plot(x, y, title=theTitle, pen='b')    #, symbol='.')
 plt.showGrid(x=True,y=True)
 plt.hideAxis('left')
 plt.hideAxis('bottom')
 
-# exporter = pg.exporters.ImageExporter(plt.plotItem)
-# exporter.parameters()['width'] = int(100)
-# exporter.export('Output.png')
-
-
 ## Start Qt event loop.
 if __name__ == '__main__':
     import sys
     if sys.flags.interactive != 1 or not hasattr(pg.QtCore, 'PYQT_VERSION'):
         pg.QtGui.QApplication.exec_()
-
