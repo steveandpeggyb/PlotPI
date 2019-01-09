@@ -23,8 +23,7 @@ The Pi_Plot(pyQtGraph)Color.py just adds dynamic color to the plot.  The total n
 <img src="MillionDigitsOfPI.gif" alt="Million Digits of PI()" style="width:143px;height:150px;"><BR>
 <table>
  <tr>
-  <th>Name</th>
-  <th>Favorite Color</th>
+  <th>Date/Time</th> <th>Comment</th>
  </tr>
  <tr>
   <td>2019-01-09 13:48:09.521180</td> <td>Begin Calculating PI().</td>
