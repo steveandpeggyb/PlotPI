@@ -19,11 +19,29 @@ So for 3.1415<br><br>
   the five (5) will be defined as x=0 y=-3 from previous location<br>
 <img src="PlotDirection.png" alt="Plot Direction" style="width:143px;height:150px;">
 <br>
-The Pi_Plot(pyQtGraph)Color.py just adds dynamic color to the plot.  The total number of digits of PI() calculated is split into 10 data buckets and each bucket is assigned a different color.  So, once plotted, the trace will have ten (10) different colors.<BR>
+The Pi_Plot(pyQtGraph)Color.py just adds dynamic color to the plot.  The total number of digits of PI() calculated is split into 10 data buckets and each bucket is assigned a different color.  So, once plotted, the trace will have ten (10) different colors.<BR><BR>
 <img src="MillionDigitsOfPI.gif" alt="Million Digits of PI()" style="width:143px;height:150px;"><BR>
-2019-01-09 13:48:09.521180 		Begin Calculating PI().<BR>
-2019-01-09 13:52:41.791404 		PI() is calculated.<BR>
-0:04:32.270224 		Total Calc Time<BR>
-2019-01-09 13:52:41.803406 		Begin Plotting PI()<BR>
-2019-01-09 13:52:42.870512 		PI() Plot Completed<BR>
-0:00:01.067106 		Total Plot Time
+<table>
+ <tr>
+  <th>Name</th>
+  <th>Favorite Color</th>
+ </tr>
+ <tr>
+  <td>2019-01-09 13:48:09.521180</td> <td>Begin Calculating PI().</td>
+ </tr>
+ <tr>
+  <td>2019-01-09 13:52:41.791404</td> <td>PI() is calculated.</td>
+ </tr>
+ <tr>
+  <td>00:04:32.270224</td> <td>Total Calc Time</td>
+ </tr>
+ <tr>
+  <td>2019-01-09 13:52:41.803406</td> <td>Begin Plotting PI()</td>
+ </tr>
+ <tr>
+  <td>2019-01-09 13:52:42.870512</td> <td>PI() Plot Completed</td>
+ </tr>
+ <tr>
+  <td>00:00:01.067106</td> <td>Total Plot Time</td>
+ </tr>
+</table>
