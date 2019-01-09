@@ -18,3 +18,5 @@ So for 3.1415<br><br>
   the one (1) will be defined as x=1.2 y=-1.8 from previous location<br>
   the five (5) will be defined as x=0 y=-3 from previous location<br>
 <img src="PlotDirection.png" alt="Plot Direction" style="width:143px;height:150px;">
+<br>
+The PIplot(Color) just adds dynamic color to the plot.  The total number of digits of PI() calculated is split into 10 data buckets and each bucket is assigned a different color.  So, once plotted, the trace will have ten (10) different colors.
